@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="images/avatar.jpg" type="image/x-icon">
+        <title>Kartoshka2331</title>
+        <style>
+            body {
+                font-family: 'Roboto', Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #000;
+                color: #fff;
+            }
+            .background {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background: linear-gradient(45deg, #111, #000);
+                animation: gradientAnimation 10s ease infinite;
+            }
+            @keyframes gradientAnimation {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                text-align: center;
+                position: relative;
+                perspective: 1000px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .icon-link {
+                text-decoration: none;
+            }
+            .button {
+                display: inline-block;
+                padding: 20px;
+                background-color: #333;
+                color: #fff;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: transform 0.3s;
+                transform-style: preserve-3d;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                font-family: 'Roboto', sans-serif;
+            }
+            .button:before {
+                content: "";
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                background: linear-gradient(45deg, #131313, #000);
+                z-index: -1;
+                filter: inherit;
+                opacity: 0;
+                transition: opacity 0.3s;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            .button:hover:before {
+                opacity: 1;
+                animation: glowingBorder 1s ease infinite;
+            }
+            @keyframes glowingBorder {
+                0% {
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                }
+                50% {
+                    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+                }
+                100% {
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                }
+            }
+            .button .avatar {
+                width: 100px;
+                height: 100px;
+                background-color: #555;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
+            .button .avatar img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+            .button .name {
+                font-size: 24px;
+                margin-bottom: 5px;
+                text-align: left;
+            }
+            .button .description {
+                font-size: 16px;
+            }
+            .button .icons {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+            .button .icons .icon {
+                width: 30px;
+                height: 30px;
+                margin-left: 10px;
+            }
+            .footer {
+                position: absolute;
+                bottom: -120px;
+                left: 0;
+                right: 0;
+                text-align: center;
+            }
+            .small-text {
+                font-size: 12px;
+                color: #888;
+            }
+            .button .text {
+                position: absolute;
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 48px;
+                font-weight: bold;
+                text-transform: uppercase;
+                animation: GlowingText 5s ease infinite;
+            }
+            @keyframes GlowingText {
+                0% {
+                    color: #fff;
+                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                }
+                50% {
+                    color: #888;
+                    text-shadow: 0 0 20px rgba(136, 136, 136, 0.9);
+                }
+                100% {
+                    color: #fff;
+                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                }
+        </style>
+    </head>
+    <body>
+        <div class="background" style="background-position: 37.0% 0.5%;"></div>
+        <div class="container">
+            <div class="button" style="transition: transform 0.3s ease 0s; transform: rotateY(0deg) rotateX(0deg);">
+                <div class="avatar">
+                    <img src="images/avatar.jpg">
+                </div>
+
+                <div class="name">Kartoshka2331</div>
+                <div class="description">Python developer; Java developer; Minecraft server creator;</div>
+
+                <div class="icons">
+                    <a href="https://t.me/Kartoshka2331" class="icon-link">
+                        <img src="images/telegram.png" alt="Telegram" class="icon">
+                    </a>
+
+                    
+                    <a href="https://dsc.gg/minedev-studio" class="icon-link">
+                        <img src="images/MineDev.png" alt="MineDev" class="icon">
+                    </a>
+
+                    <a href="https://open.spotify.com/user/31gpnu7fxw2igea3okk4rizlhnjm" class="icon-link">
+                        <img src="images/spotify.png" alt="Spotify" class="icon">
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <script>
+            document.querySelector('body').addEventListener('mousemove', function(e) {
+                document.querySelector('.button').style.transform = 'rotateX(' + (window.innerHeight / 2 - e.pageY) / 30 + 'deg) rotateY(' + (window.innerWidth / 2 - e.pageX) / 30 + 'deg)';
+                document.querySelector('.background').style.backgroundPosition = (e.pageX / window.innerWidth) * 100 + '% ' + (e.pageY / window.innerHeight) * 100 + '%';
+            });
+
+            document.querySelector('body').addEventListener('mouseenter', function() {
+                document.querySelector('.button').style.transition = 'none';
+            });
+
+            document.querySelector('body').addEventListener('mouseleave', function() {
+                document.querySelector('.button').style.transition = 'transform 0.3s ease';
+                document.querySelector('.button').style.transform = 'rotateY(0deg) rotateX(0deg)';
+            });
+        </script>
+    </body>
+</html>
