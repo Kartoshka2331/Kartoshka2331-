@@ -1,202 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="UTF-8">
-        <link rel="shortcut icon" href="images/avatar.jpg" type="image/x-icon">
-        <title>Kartoshka2331</title>
-        <style>
-            body {
-                font-family: 'Roboto', Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #000;
-                color: #fff;
-            }
-            .background {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                background: linear-gradient(45deg, #111, #000);
-                animation: gradientAnimation 10s ease infinite;
-            }
-            @keyframes gradientAnimation {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-            .container {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 20px;
-                text-align: center;
-                position: relative;
-                perspective: 1000px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
-            .icon-link {
-                text-decoration: none;
-            }
-            .button {
-                display: inline-block;
-                padding: 20px;
-                background-color: #333;
-                color: #fff;
-                border-radius: 10px;
-                cursor: pointer;
-                transition: transform 0.3s;
-                transform-style: preserve-3d;
-                position: relative;
-                overflow: hidden;
-                box-shadow: 0 0 300px #ff8fc398;
-                font-family: 'Roboto', sans-serif;
-            }
-            .button:before {
-                content: "";
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                right: 0px;
-                bottom: 0px;
-                background: linear-gradient(45deg, #ff8fc34b, #342e3565);
-                z-index: -1;
-                filter: inherit;
-                opacity: 0;
-                transition: opacity 0.3s;
-                box-shadow: 0 0 150px #c793cb;;
-            }
-            .button:hover:before {
-                opacity: 1;
-                animation: glowingBorder 1s ease infinite;
-            }
-            @keyframes glowingBorder {
-                0% {
-                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-                }
-                50% {
-                    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
-                }
-                100% {
-                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-                }
-            }
-            .button .avatar {
-                width: 100px;
-                height: 100px;
-                background-color: #555;
-                border-radius: 50%;
-                margin-bottom: 10px;
-            }
-            .button .avatar img {
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-            }
-            .button .name {
-                font-size: 24px;
-                margin-bottom: 5px;
-                text-align: left;
-            }
-            .button .description {
-                font-size: 16px;
-            }
-            .button .icons {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-            }
-            .button .icons .icon {
-                width: 30px;
-                height: 30px;
-                margin-left: 10px;
-            }
-            .footer {
-                position: absolute;
-                bottom: -120px;
-                left: 0;
-                right: 0;
-                text-align: center;
-            }
-            .small-text {
-                font-size: 12px;
-                color: #888;
-            }
-            .button .text {
-                position: absolute;
-                top: 30%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 48px;
-                font-weight: bold;
-                text-transform: uppercase;
-                animation: GlowingText 5s ease infinite;
-            }
-            @keyframes GlowingText {
-                0% {
-                    color: #fff;
-                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-                }
-                50% {
-                    color: #888;
-                    text-shadow: 0 0 20px rgba(136, 136, 136, 0.9);
-                }
-                100% {
-                    color: #fff;
-                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div class="background" style="background-position: 37.0% 0.5%;"></div>
-        <div class="container">
-            <div class="button" style="transition: transform 0.3s ease 0s; transform: rotateY(0deg) rotateX(0deg);">
-                <div class="avatar">
-                    <img src="images/avatar.jpg">
-                </div>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartoshka2331</title>
+    <link rel="icon" href="avatar.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Apple Chancery, cursive;
+            background: url("background.webp") no-repeat center center fixed;
+            background-size: cover;
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: rgba(20, 20, 20, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .button {
+            padding: 8px;
+            background: rgb(49, 49, 49);
+            border-radius: 1rem;
+            transition: .2s;
+            display: inline-block;
+            margin: 5px;
+            text-decoration: none;
+            color: #f5f5f5;
+        }
+        .button:hover {
+            background: #555;
+            transform: scale(1.05);
+        }
+        .icon {
+            height: 16px;
+            margin-right: 4px;
+        }
+    </style>
 
-                <div class="name">Kartoshka2331</div>
-                <div class="description">Python developer; Java developer;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</div>
+    <script>
+        function openLinkInApp(link) {
+            window.location.href = link;
+        }
+    
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert("IP скопирован");
+            });
+        }
+    </script>
 
-                <div class="icons">
-                    <a href="https://t.me/Kartoshka2331" class="icon-link">
-                        <img src="images/telegram.png" alt="Telegram" class="icon">
-                    </a>
+    <audio id="audio" autoplay loop><source src="background_music.mp3" type="audio/mpeg"></audio>
+</head>
+<body>
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+    <div class="container">
+        <img src="avatar.jpg" class="avatar">
+        <h1>Kartoshka2331</h1>
+        <p>Python && Java developer</p>
 
-                    <a href="https://discord.com/users/1205031699705110582" class="icon-link">
-                        <img src="images/discord.png" alt="Discord" class="icon">
-                    </a>
-
-                    <a href="https://open.spotify.com/user/t5kxojm1zrljrqqa62352s25u" class="icon-link">
-                        <img src="images/spotify.png" alt="Spotify" class="icon">
-                    </a>
-                </div>
-            </div>
-
-
+        <div>
+            <a onclick="openLinkInApp('tg://resolve?domain=kartoshka2331')" class="button"><img src="images/telegram.jpg" class="icon">Telegram</a>
+            <a onclick="openLinkInApp('tg://resolve?domain=hamster_kombat_farmily')" class="button"><img src="images/hmstr_channel.jpg" class="icon">Hamser Kombat Сhannel</a>
+            <a onclick="window.location.href='https://chat.kartoshka2331.guru'" class="button"><img src="images/chat.jpg" class="icon">Chat</a>
+            <a onclick="window.location.href='https://open.spotify.com/user/t5kxojm1zrljrqqa62352s25u'" class="button"><img src="images/spotify.jpg" class="icon">Spotify</a>
+            <a onclick="window.location.href='https://lolz.live/kartoshka2331/'" class="button"><img src="images/zelenka.jpg" class="icon">LZT</a>
+            <a onclick="window.location.href='https://dsc.gg/minedev-studio'" class="button"><img src="images/minedev.jpg" class="icon">MineDev</a>
+            <a onclick="copyToClipboard('mc.kartoshka2331.guru')" class="button"><img src="images/minecraft.jpg" class="icon">Minecraft server</a>
         </div>
-
-        <script>
-            document.querySelector('body').addEventListener('mousemove', function(e) {
-                document.querySelector('.button').style.transform = 'rotateX(' + (window.innerHeight / 2 - e.pageY) / 30 + 'deg) rotateY(' + (window.innerWidth / 2 - e.pageX) / 30 + 'deg)';
-                document.querySelector('.background').style.backgroundPosition = (e.pageX / window.innerWidth) * 100 + '% ' + (e.pageY / window.innerHeight) * 100 + '%';
-            });
-
-            document.querySelector('body').addEventListener('mouseenter', function() {
-                document.querySelector('.button').style.transition = 'none';
-            });
-
-            document.querySelector('body').addEventListener('mouseleave', function() {
-                document.querySelector('.button').style.transition = 'transform 0.3s ease';
-                document.querySelector('.button').style.transform = 'rotateY(0deg) rotateX(0deg)';
-            });
-        </script>
-    </body>
+    </div>
+</body>
 </html>
