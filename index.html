@@ -56,24 +56,15 @@
         function openLinkInApp(link) {
             window.location.href = link;
         }
-    
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                alert("IP скопирован");
-            });
-        }
 
-            // Предотвращаем контекстное меню
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });
 
-        // Предотвращаем выделение текста
         document.addEventListener('selectstart', function(e) {
             e.preventDefault();
         });
 
-        // Предотвращаем использование комбинаций клавиш для копирования (Ctrl+C, Cmd+C)
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey || e.metaKey) {
                 switch (String.fromCharCode(e.which).toLowerCase()) {
@@ -106,7 +97,6 @@
             <a onclick="window.location.href='https://open.spotify.com/user/31pyzhbjr45vypph3gnmcxobwycm'" class="button"><img src="content/images/spotify.jpg" class="icon">Spotify</a>
             <a onclick="window.location.href='https://lolz.live/kartoshka2331/'" class="button"><img src="content/images/zelenka.jpg" class="icon">LZT</a>
             <a onclick="window.location.href='https://dsc.gg/minedev-studio'" class="button"><img src="content/images/minedev.jpg" class="icon">MineDev</a>
-            <a onclick="copyToClipboard('mc.kartoshka2331.guru')" class="button"><img src="content/images/minecraft.jpg" class="icon">Minecraft server</a>
         </div>
     </div>
 </body>
